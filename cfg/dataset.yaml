@@ -1,0 +1,79 @@
+defaults:
+  - checkpoint: path
+  - data: default
+  - debug: no_debug
+  - logger: online
+  - logging: default
+  - optimizer: default
+  - trainer: train
+  # - model: byolav
+  # - prober: transformer
+project_name: AVDFD
+experiment_name: 
+batch_size: 32
+# batch_size_prober: ${batch_size}
+num_workers: 8
+replace_sampler_ddp: False
+gpus: 1
+
+network: FauForensics
+
+channel: rgb
+crop_type: video_face
+n_fft: 512
+n_mels: 80
+audio2video: 4
+win_length: 320
+horizontal_flip_prob: 0.5
+num_frames: 25                
+freq_mask: 27
+time_mask_video: 12
+time_mask_audio: 48
+n_freq_mask: 1
+n_time_mask_video: 1
+n_time_mask_audio: 1          
+mask_version: v1
+time_mask_prob_video: 0.5
+time_mask_prob_audio: 0.5
+freq_mask_prob_audio: 0.5
+time_mask_targets: False
+clean_targets: True
+
+
+defaults:
+  - root: default
+name: vox2_mp4
+n_classes:
+train_len: 184941 # 1091724
+sample_rate: 16000
+fps: 25
+limit_val_batches: 0.0
+multiple_trainloader_mode: min_size
+
+
+
+center_crop_dim: 160
+random_crop_dim: 140
+resize_dim: 112
+random_erasing_prob: 0.5
+random_erasing_scale:
+  - 0.02
+  - 0.33
+name: video_face_v2 
+video_dir: video_face
+train_csv: train.csv
+val_csv: val.csv
+test_csv: test.csv
+
+obj:
+  _target_: pytorchvideo.transforms.Normalize
+  mean:
+    - 0.485
+    - 0.456
+    - 0.406
+  std:
+    - 0.229
+    - 0.224
+    - 0.225
+in_video_channels: 3
+grayscale_prob: 0.0

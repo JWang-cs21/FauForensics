@@ -9,6 +9,7 @@ Thanks for your interest in this project.
 
 ## Citation
 If you find this project helpful for your research, please consider citing the following BibTeX entry.
+```bibtex
 @article{wang2025fauforensics,
   title={FauForensics: Boosting Audio-Visual Deepfake Detection with Facial Action Units},
   author={Wang, Jian and Wu, Baoyuan and Liu, Li and Liu, Qingshan},

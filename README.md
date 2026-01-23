@@ -12,6 +12,10 @@ conda activate fauforensics
 pip install -r requirements.txt
 ```
 
+
+## Acknowledgements
+We thank the authors of [RealForensics](https://github.com/ahaliassos/RealForensics) and [ME-GraphAU](https://github.com/CVI-SZU/ME-GraphAU) for their valuable contributions, which formed the basis of our implementation.
+
 ## Citation
 If you find this project helpful for your research, please consider citing the following BibTeX entry.
 ```bibtex

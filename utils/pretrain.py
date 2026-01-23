@@ -2,8 +2,7 @@ import torch
 
 def load_pretrained_weights(start_epoch, pretrained_dict_a=None, pretrained_dict_v=None, model=None, args=None, logger=None):
     # return model
-    PATH_root='/home/ubuntu/code/mm_detectors/PSForensics/'
-    # PATH_root='/path_to_pretrained_weights/'
+    PATH_root='/path_to_pretrained_weights/'
 
     path_fau = PATH_root+'checkpoints/pretrain/au_112.pth'
     path_fau = PATH_root+'checkpoints/pretrain/au_112_12cls2.pth'
